@@ -8,11 +8,11 @@ import {
 
 
 const Login = () => (
- <div>
-  <h1>Splash Login</h1>
-   <hr/>
-   <Link to="/Portal">Portal</Link>
- </div>
+  <div>
+    <h1>Splash Login</h1>
+     <hr/>
+     <Link to="/Portal">Portal</Link>
+  </div>
 )
 
 

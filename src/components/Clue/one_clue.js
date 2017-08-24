@@ -9,6 +9,7 @@ import {
 const CluePage = () => (
   <div>
     <h1>THIS IS A CLUE</h1>
+    <input type="file" accept="image/*" capture="camera"/>
   </div>
 )
 
