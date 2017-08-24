@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
+import CurrentHunt from './current_hunt';
+import TopUsers from './top_users';
 
-class Portal extends Component {
+class Portal extends Component{
   render() {
     return (
-      <div className="Portal">
-
-      </div>
-    );
+     <div>
+       <CurrentHunt/>
+       <TopUsers/>
+     </div>
+    )
   }
 }
+
 
 export default Portal;
