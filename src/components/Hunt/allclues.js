@@ -5,6 +5,7 @@ import {
   Link
 } from 'react-router-dom';
 
+import Style from '../../App.css';
 
 const AllClues = () => (
   <div>
