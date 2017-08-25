@@ -5075,6 +5075,10 @@ react-error-overlay@^1.0.10:
     settle-promise "1.0.0"
     source-map "0.5.6"
 
+react-facebook-login-component@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/react-facebook-login-component/-/react-facebook-login-component-0.9.0.tgz#5eaf45f7534b811095a33158783c6f01b7156152"
+
 react-router-dom@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.2.0.tgz#84238285ac31a1afe53c87a751b9f1ffc5b69af7"
