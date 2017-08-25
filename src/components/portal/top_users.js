@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom';
 
-import Style from '../../App.css';
+// import Style from '../../App.css';
 
 const TopUsers = () => (
   <div>
