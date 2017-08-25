@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router,
-  Route,
   Link
 } from 'react-router-dom';
 
-import Style from '../../App.css';
+// import Style from '../../App.css';
 import HuntPage from '../Hunt/huntpage';
 import BoulderImg from '../../images/Boulder.jpg'
 

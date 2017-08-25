@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom';
 
-import Style from '../../App.css';
+// import Style from '../../App.css';
 import { FacebookLogin } from 'react-facebook-login-component';
-
+import REACT_APP_FB from '../../.env';
 
 class Login extends React.Component{
 
@@ -18,6 +13,7 @@ class Login extends React.Component{
   responseFacebook (response) {
     console.log(response);
     if(response.accessToken){
+      window.document.cookie = response.accessToken;
       window.location.href +="Portal";
     }
     //anything else you want to do(save to localStorage)...
@@ -26,7 +22,7 @@ class Login extends React.Component{
   render () {
     return (
       <div>
-        <FacebookLogin socialId='1288710811237257'
+        <FacebookLogin socialId= '1288710811237257'
                        language="en_US"
                        scope="public_profile,email"
                        responseHandler={this.responseFacebook}
