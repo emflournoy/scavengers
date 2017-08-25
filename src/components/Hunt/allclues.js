@@ -8,10 +8,10 @@ import {
 import Style from '../../App.css';
 
 const AllClues = () => (
-  <div>
-    <Link to="/CluePage"><button>select this clue</button></Link>
-    <h1>click a clue</h1>
-    <h1>click a clue</h1>
+  <div className='allcards'>
+    <Link to="/CluePage">
+      <button className='cluecard'>1</button>
+    </Link>
   </div>
 )
 
