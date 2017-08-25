@@ -5,11 +5,16 @@ import {
   Link
 } from 'react-router-dom';
 
+import Style from '../../App.css';
 
 const CluePage = () => (
-  <div>
+  <div className='body'>
+    <div className='nav'>
+    </div>
     <h1>THIS IS A CLUE</h1>
-    <input type="file" accept="image/*" capture="camera"/>
+    <button className='lgbutton'>
+      <input type="file" accept="image/*" capture="camera"/>
+    </button>
   </div>
 )
 

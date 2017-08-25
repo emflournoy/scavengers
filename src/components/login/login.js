@@ -5,13 +5,30 @@ import {
   Link
 } from 'react-router-dom';
 
+import Style from '../../App.css';
 
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1288710811237257',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
 
 const Login = () => (
-  <div>
-    <h1>Splash Login</h1>
-     <hr/>
-     <Link to="/Portal">Portal</Link>
+  <div className='instagram'>
+    <h3>Sign in with Instagram</h3>
+    <Link to="/Portal">Portal</Link>
   </div>
 )
 
