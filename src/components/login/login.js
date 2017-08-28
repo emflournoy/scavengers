@@ -12,7 +12,6 @@ class Login extends React.Component{
   }
 
   async responseFacebook (response) {
-    console.log(response);
     let name = response.name;
     let firstName = name.substr(0, name.indexOf(' '))
     let lastName = name.substr(name.indexOf(' ')+1);
@@ -30,11 +29,10 @@ class Login extends React.Component{
       },body:JSON.stringify(userObj)
     })
     let jsonResponse = await res.json();
-    console.log(jsonResponse)
-    // if(response.accessToken){
-    //   window.document.cookie = response.accessToken;
-    //   window.location.href +="Portal";
-    // }
+    if(jsonResponse){
+      window.document.cookie = jsonResponse.id;
+      window.location.href +="Portal";
+    }
     //anything else you want to do(save to localStorage)...
   }
 
