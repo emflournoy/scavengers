@@ -11,9 +11,18 @@ class CluePage extends Component {
   //  this.handleSubmit = this.handleSubmit.bind(this);
  }
 
- handleChange(event) {
-   console.log(event.target.value);
-   this.setState({value: event.target.value});
+ async handleChange(event) {
+   let res = await fetch('http://localhost:3000/classify', {
+     method: 'POST',
+     headers: {
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+     },
+     body: JSON.stringify(event.target.value)
+   })
+   let jsonResponse = await res.json();
+  //  this.setState({value: jsonResponse});
+
  }
 
   render(){

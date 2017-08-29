@@ -25,7 +25,7 @@ class Login extends React.Component{
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
-      },body:JSON.stringify(userObj)
+      },body: JSON.stringify(userObj)
     })
     let jsonResponse = await res.json();
     if(jsonResponse){
