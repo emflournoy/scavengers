@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import { FacebookLogin } from 'react-facebook-login-component';
 // import REACT_APP_FB from '../../.env';
 
-
 class Login extends React.Component{
 
   constructor (props, context) {
