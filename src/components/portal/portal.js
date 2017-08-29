@@ -18,7 +18,7 @@ class Portal extends Component{
     }
   }
 
-  async componentDidMount(){
+  async componentWillMount(){
     let userId = window.document.cookie
     let res = await fetch(`http://localhost:3000/user/hunts/${userId}`, {
       method: 'GET',
@@ -37,7 +37,9 @@ class Portal extends Component{
       <div className='body'>
         <div className='nav'>
         </div>
-        <CurrentHunt/>
+          {this.state.userHunts.map((ele, index)=>(
+            <CurrentHunt userid={this.state.userId} data={ele} key={index}/>
+          ))}
         <TopUsers/>
       </div>
     )
