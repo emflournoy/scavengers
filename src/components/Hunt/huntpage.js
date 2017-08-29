@@ -34,9 +34,9 @@ class HuntPage extends Component{
         <div className='nav'>
         </div>
         <h3>these are all the clues.</h3>
-        {this.state.AllClues.map((ele, index)=>{
-          <AllClues data={ele} key={index}/>
-        })}
+        {this.state.AllClues.map((ele, index)=>(
+          <AllClues data={ele} key={index} num={index+1}/>
+        ))}
       </div>
     )
   }
