@@ -10,10 +10,26 @@ class Login extends React.Component{
     super(props, context);
   }
 
-  responseFacebook (response) {
-    console.log(response);
-    if(response.accessToken){
-      window.document.cookie = response.accessToken;
+  async responseFacebook (response) {
+    let name = response.name;
+    let firstName = name.substr(0, name.indexOf(' '))
+    let lastName = name.substr(name.indexOf(' ')+1);
+    let userObj = {
+      firstname: firstName,
+      lastname: lastName,
+      accessToken: response.accessToken,
+      email: response.email
+    }
+    let res = await fetch('http://localhost:3000/user', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },body:JSON.stringify(userObj)
+    })
+    let jsonResponse = await res.json();
+    if(jsonResponse){
+      window.document.cookie = jsonResponse.id;
       window.location.href +="Portal";
     }
     //anything else you want to do(save to localStorage)...

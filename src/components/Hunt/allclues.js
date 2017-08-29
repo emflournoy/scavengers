@@ -5,10 +5,10 @@ import {
 
 import Style from '../../App.css';
 
-const AllClues = () => (
+const AllClues = (props) => (
   <div className='allcards'>
     <Link to="/CluePage">
-      <button className='cluecard'>1</button>
+      <button className='cluecard'>{props.num}</button>
     </Link>
   </div>
 )

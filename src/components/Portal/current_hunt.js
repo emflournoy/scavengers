@@ -7,7 +7,7 @@ import {
 import HuntPage from '../Hunt/huntpage';
 import BoulderImg from '../../images/Boulder.jpg'
 
-const CurrentHunt = () => (
+const CurrentHunt = ({data}) => (
   <div className='currentHunt'>
     <div>
       <div className='curHuntSection'>
@@ -15,15 +15,17 @@ const CurrentHunt = () => (
           <img className='huntThumbnail' src={BoulderImg}></img>
         </div>
         <div>
-          <p>Get to know Boulder</p>
+          <p>{data.description}</p>
         </div>
       </div>
       <div className='curHuntSection'>
         <div>
-          <h5>2/15 completed</h5>
+          <h5>0 / {data.total_clues} completed</h5>
         </div>
         <div>
-          <Link to='/HuntPage'><button className='smbutton'>continue hunt</button></Link>
+          <Link to={{
+            pathname: `/HuntPage/${data.id}`
+          }}><button className='smbutton'>continue hunt</button></Link>
         </div>
       </div>
     </div>
