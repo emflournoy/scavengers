@@ -22,18 +22,20 @@ class HuntPage extends Component{
     })
     let jsonResponse = await res.json();
     this.setState({
-      AllClues: jsonResponse
+      AllClues: jsonResponse,
+      hunt_description: jsonResponse[0].description
     },()=>{
       console.log(this.state);
     })
   }
 
   render(){
+    console.log(this.state.hunt_description)
     return(
       <div className='body'>
         <div className='nav'>
         </div>
-        <h3>these are all the clues.</h3>
+        <h3>{this.state.hunt_description}</h3>
           <div className='allClueCards'>
           {this.state.AllClues.map((ele, index)=>(
             <AllClues data={ele} key={index} num={index+1}/>
