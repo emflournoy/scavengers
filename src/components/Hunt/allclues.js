@@ -7,7 +7,7 @@ import Style from '../../App.css';
 
 const AllClues = (props) => (
   <div className='allcards'>
-    <Link to="/CluePage">
+    <Link to={{pathname: `/CluePage/${props.data.clue_id}`}}>
       <button className='cluecard'>{props.num}</button>
     </Link>
   </div>
