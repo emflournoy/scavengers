@@ -53,6 +53,7 @@ class CluePage extends Component {
    })
    let jsonResponse = await res.json();
    this.setState({
+     clue_url: jsonResponse.photo_url,
      clue_description: jsonResponse.description
    },()=>{
      console.log(this.state);
