@@ -11,18 +11,25 @@ class CluePage extends Component {
   //  this.handleSubmit = this.handleSubmit.bind(this);
  }
 
- async handleChange(event) {
-   let res = await fetch('http://localhost:3000/classify', {
-     method: 'POST',
-     headers: {
-       'Accept': 'application/json',
-       'Content-Type': 'application/json'
-     },
-     body: JSON.stringify(event.target.value)
-   })
-   let jsonResponse = await res.json();
-  //  this.setState({value: jsonResponse});
-
+ handleChange(event) {
+   let file = event.target.files[0];
+   this.setState({value: event.target.value},()=>{
+    var reader = new FileReader();
+    reader.onload = function(){
+      var dataURL = reader.result;
+      fetch('http://localhost:3000/hunts',{
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },body:JSON.stringify({data :dataURL})
+      }).then((res)=>{
+        console.log(res);
+      })
+    };
+    // reader.readAsArrayBuffer(file);
+    reader.readAsDataURL(file);
+   });
  }
 
   render(){
