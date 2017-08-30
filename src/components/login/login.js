@@ -37,7 +37,7 @@ class Login extends React.Component{
 
   render () {
     return (
-      <div>
+      <div className="loginbody">
         <FacebookLogin socialId= '1288710811237257'
                        language="en_US"
                        scope="public_profile,email"
