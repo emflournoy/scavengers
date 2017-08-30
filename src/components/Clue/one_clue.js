@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import async from 'async';
 
 // import Style from '../../App.css';
 
@@ -18,20 +19,28 @@ class CluePage extends Component {
     var reader = new FileReader();
     reader.onload = function(){
       var dataURL = reader.result;
-      fetch('http://localhost:3000/hunts',{
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },body:JSON.stringify({data :dataURL})
-      }).then((res)=>{
-        console.log(res);
-      })
-    };
+      // async.parallel( ()=>{
+      fetch('http://localhost:3000/classify',{
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },body:JSON.stringify({data: dataURL})
+        }).then(res=>{
+          res.json().then(data=>{
+            console.log(data);
+          })
+        })
+      // })
+
+      // let jsonResponse = this.await res.json();
+      // console.log(jsonResponse);
+    }
     // reader.readAsArrayBuffer(file);
     reader.readAsDataURL(file);
-   });
- }
+  })
+};
+
 
  async componentWillMount(){
    let clueId = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
