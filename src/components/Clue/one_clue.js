@@ -12,8 +12,24 @@ class CluePage extends Component {
  }
 
  handleChange(event) {
-   console.log(event.target.value);
-   this.setState({value: event.target.value});
+   let file = event.target.files[0];
+   this.setState({value: event.target.value},()=>{
+    var reader = new FileReader();
+    reader.onload = function(){
+      var dataURL = reader.result;
+      fetch('http://localhost:3000/hunts',{
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },body:JSON.stringify({data :dataURL})
+      }).then((res)=>{
+        console.log(res);
+      })
+    };
+    // reader.readAsArrayBuffer(file);
+    reader.readAsDataURL(file);
+   });
  }
 
   render(){
