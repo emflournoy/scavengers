@@ -15,6 +15,7 @@ class CluePage extends Component {
 
  handleChange(event) {
    let endpoint = this.state.clue_url;
+   let classCheck = this.state.clue_class;
    let file = event.target.files[0];
    this.setState({value: event.target.value},()=>{
     var reader = new FileReader();
@@ -29,6 +30,17 @@ class CluePage extends Component {
           },body:JSON.stringify({data: dataURL})
         }).then(res=>{
           res.json().then(data=>{
+            if(data[0].class === classCheck){
+              let clueId = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
+              console.log('it is the same')
+              fetch(`http://localhost:3000/user/${clueId}`, {
+                method: 'PATCH',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json',
+                }
+              })
+            }
             console.log(data);
           })
         })
@@ -55,6 +67,7 @@ class CluePage extends Component {
    let jsonResponse = await res.json();
    this.setState({
      clue_url: jsonResponse.photo_url,
+     clue_class: jsonResponse.photo_class,
      clue_description: jsonResponse.description
    },()=>{
      console.log(this.state);
