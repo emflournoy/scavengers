@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import CurrentHunt from './current_hunt';
 import TopUsers from './top_users';
 
-class Portal extends Component{
+class LandingPage extends Component{
   constructor(){
     super();
     this.state = {
@@ -41,4 +41,4 @@ class Portal extends Component{
 }
 
 
-export default Portal;
+export default LandingPage;

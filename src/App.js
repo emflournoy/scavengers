@@ -7,10 +7,10 @@ import {
 } from 'react-router-dom';
 
 import Style from './App.css';
-import Login from './components/Login/login';
+import OAuth from './components/OAuth/oauth';
 import HuntPage from './components/Hunt/huntpage';
 import CluePage from './components/Clue/one_clue';
-import Portal from './components/Portal/portal';
+import LandingPage from './components/LandingPage/landingpage';
 
 
 
@@ -22,8 +22,8 @@ class App extends Component {
         <div className='body'>
           <Router>
               <Switch>
-                <Route exact path='/' component={Login}/>
-                <Route path='/Portal' component={Portal}/>
+                <Route exact path='/' component={OAuth}/>
+                <Route path='/LandingPage' component={LandingPage}/>
                 <Route path='/HuntPage' component={HuntPage}/>
                 <Route path='/CluePage' component={CluePage}/>
               </Switch>

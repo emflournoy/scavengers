@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { FacebookLogin } from 'react-facebook-login-component';
 // import REACT_APP_FB from '../../.env';
 
-class Login extends React.Component{
+class OAuth extends React.Component{
 
   constructor (props, context) {
     super(props, context);
@@ -30,7 +30,7 @@ class Login extends React.Component{
     let jsonResponse = await res.json();
     if(jsonResponse){
       window.document.cookie = jsonResponse.id;
-      window.location.href +="Portal";
+      window.location.href +="LandingPage";
     }
     //anything else you want to do(save to localStorage)...
   }
@@ -53,4 +53,4 @@ class Login extends React.Component{
 
 }
 
-export default Login;
+export default OAuth;
