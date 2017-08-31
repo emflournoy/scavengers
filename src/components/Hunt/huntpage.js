@@ -21,6 +21,7 @@ class HuntPage extends Component{
       }
     })
     let jsonResponse = await res.json();
+    console.log(jsonResponse);
     this.setState({
       AllClues: jsonResponse,
       hunt_description: jsonResponse[0].description
