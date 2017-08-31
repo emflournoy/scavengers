@@ -11,6 +11,7 @@ class OAuth extends React.Component{
   }
 
   async responseFacebook (response) {
+    console.log(response);
     let name = response.name;
     let firstName = name.substr(0, name.indexOf(' '))
     let lastName = name.substr(name.indexOf(' ')+1);
