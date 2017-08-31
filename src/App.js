@@ -1,21 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link
+} from 'react-router-dom';
+
+import Style from './App.css';
+import Portal from './components/Portal/portal';
+import Login from './components/Login/login';
+import HuntPage from './components/Hunt/huntpage';
+import CluePage from './components/Clue/one_clue';
+
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <div>
+
+        <div className='body'>
+          <Router>
+              <Switch>
+                <Route exact path='/' component={Login}/>
+                <Route path='/Portal' component={Portal}/>
+                <Route path='/HuntPage' component={HuntPage}/>
+                <Route path='/CluePage' component={CluePage}/>
+              </Switch>
+          </Router>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
       </div>
-    );
+    )
   }
 }
+
+
 
 export default App;
