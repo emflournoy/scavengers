@@ -41,13 +41,9 @@ class CluePage extends Component {
                 }
               })
             }
-            console.log(data);
+              console.log(data)
           })
         })
-      // })
-
-      // let jsonResponse = this.await res.json();
-      // console.log(jsonResponse);
     }
     // reader.readAsArrayBuffer(file);
     reader.readAsDataURL(file);
