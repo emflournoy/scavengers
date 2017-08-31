@@ -7,10 +7,10 @@ import {
 } from 'react-router-dom';
 
 import Style from './App.css';
-import Portal from './components/Portal/portal';
 import Login from './components/Login/login';
 import HuntPage from './components/Hunt/huntpage';
 import CluePage from './components/Clue/one_clue';
+import Portal from './components/Portal/portal';
 
 
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 // import Style from '../../App.css';
 import CurrentHunt from './current_hunt';
 import TopUsers from './top_users';
