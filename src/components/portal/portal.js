@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import {
-  // BrowserRouter as Router,
-  // Route,
-  // Link
-} from 'react-router-dom';
 
 // import Style from '../../App.css';
 import CurrentHunt from './current_hunt';
