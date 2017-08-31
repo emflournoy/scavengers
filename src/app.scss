@@ -1,0 +1,109 @@
+@import 'tools';
+
+*{
+  font-family: $raleway;
+}
+
+.nav{
+  background-color: rgba(54, 70, 82, 0.7);
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+
+.body{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url(./images/footer_lodyas.png);
+}
+
+h1{
+  margin: 0px;
+}
+
+.instagram{
+  height: 15%;
+  width: 80%;
+  border: 4px solid $red;
+  border-radius: 25px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.81);
+}
+
+.currentHunt{
+  height: 20%;
+  width: 80%;
+  border: 2px solid $green;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.smbutton{
+  height: 30px;
+  width: 120px;
+  border: 2px solid $red;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.lgbutton{
+  height: 60px;
+  width: 200px;
+  border: 4px solid $red;
+  border-radius: 8px;
+  text-align: center;
+  padding-top: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.curHuntSection{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.huntThumbnail{
+  height: 80px;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+}
+
+.allClueCards{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%; }
+
+.cluecard {
+  float: left;
+  height: 80px;
+  width: 80px;
+  border: 4px solid #D5573B;
+  border-radius: 8px;
+  text-align: center;
+  padding-top: 0;
+  margin: 1vw;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 40px; }
+
+.complete{
+  background-color: rgba($green, .5);
+  border: 4px solid $green;}
+
+.incomplete{
+  background-color: rgba($red, .5)}
