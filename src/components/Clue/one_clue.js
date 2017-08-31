@@ -14,13 +14,14 @@ class CluePage extends Component {
  }
 
  handleChange(event) {
+   let endpoint = this.state.clue_url;
    let file = event.target.files[0];
    this.setState({value: event.target.value},()=>{
     var reader = new FileReader();
     reader.onload = function(){
       var dataURL = reader.result;
       // async.parallel( ()=>{
-      fetch('http://localhost:3000/classify',{
+      fetch(`http://localhost:3000/classify/${endpoint}`,{
           method: 'POST',
           headers: {
             'Accept': 'application/json',
