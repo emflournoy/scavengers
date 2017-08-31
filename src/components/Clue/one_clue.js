@@ -23,7 +23,7 @@ class CluePage extends Component {
     reader.onload = function(){
       var dataURL = reader.result;
       // async.parallel( ()=>{
-      fetch(`http://localhost:3000/classify/${endpoint}`,{
+      fetch(`https://git.heroku.com/scavengerz.git/classify/${endpoint}`,{
           method: 'POST',
           headers: {
             'Accept': 'application/json',
@@ -37,7 +37,7 @@ class CluePage extends Component {
             }else if(data[0].class === classCheck){
               let clueId = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
               console.log('it is the same')
-              fetch(`http://localhost:3000/user/${clueId}/?user=${userId}`, {
+              fetch(`https://git.heroku.com/scavengerz.git/user/${clueId}/?user=${userId}`, {
                 method: 'PATCH',
                 headers: {
                   'Accept': 'application/json',
@@ -57,7 +57,7 @@ class CluePage extends Component {
 
  async componentWillMount(){
    let clueId = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
-   let res = await fetch(`http://localhost:3000/hunts/clues/${clueId}`, {
+   let res = await fetch(`https://git.heroku.com/scavengerz.git/hunts/clues/${clueId}`, {
      method: 'GET',
      headers: {
        'Accept': 'application/json',
