@@ -31,7 +31,10 @@ class CluePage extends Component {
           },body:JSON.stringify({data: dataURL})
         }).then(res=>{
           res.json().then(data=>{
-            if(data[0].class === classCheck){
+            if(!data.length){
+              console.log('no match')
+              return
+            }else if(data[0].class === classCheck){
               let clueId = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
               console.log('it is the same')
               fetch(`http://localhost:3000/user/${clueId}/?user=${userId}`, {
@@ -45,11 +48,11 @@ class CluePage extends Component {
               console.log(data)
           })
         })
-    }
-    // reader.readAsArrayBuffer(file);
-    reader.readAsDataURL(file);
-  })
-};
+      }
+      // reader.readAsArrayBuffer(file);
+      reader.readAsDataURL(file);
+    })
+  };
 
 
  async componentWillMount(){
@@ -65,7 +68,7 @@ class CluePage extends Component {
    this.setState({
      clue_url: jsonResponse.photo_url,
      clue_class: jsonResponse.photo_class,
-     clue_description: jsonResponse.description
+     clue_description: jsonResponse .description
    },()=>{
      console.log(this.state);
    })
