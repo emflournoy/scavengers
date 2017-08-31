@@ -20,7 +20,7 @@ class Login extends React.Component{
       accessToken: response.accessToken,
       email: response.email
     }
-    let res = await fetch('https://git.heroku.com/scavengerz.git/user', {
+    let res = await fetch('https://scavengers-server.herokuapp.com/user', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

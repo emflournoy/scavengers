@@ -20,7 +20,7 @@ class Portal extends Component{
 
   async componentWillMount(){
     let userId = window.document.cookie
-    let res = await fetch(`https://git.heroku.com/scavengerz.git/user/hunts/${userId}`, {
+    let res = await fetch(`https://scavengers-server.herokuapp.com/user/hunts/${userId}`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
