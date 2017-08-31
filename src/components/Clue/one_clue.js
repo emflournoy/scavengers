@@ -14,6 +14,7 @@ class CluePage extends Component {
  }
 
  handleChange(event) {
+   let userId = window.document.cookie
    let endpoint = this.state.clue_url;
    let classCheck = this.state.clue_class;
    let file = event.target.files[0];
@@ -33,7 +34,7 @@ class CluePage extends Component {
             if(data[0].class === classCheck){
               let clueId = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
               console.log('it is the same')
-              fetch(`http://localhost:3000/user/${clueId}`, {
+              fetch(`http://localhost:3000/user/${clueId}/?user=${userId}`, {
                 method: 'PATCH',
                 headers: {
                   'Accept': 'application/json',

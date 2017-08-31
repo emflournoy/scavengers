@@ -13,7 +13,8 @@ class HuntPage extends Component{
 
   async componentWillMount(){
     let huntId = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
-    let res = await fetch(`http://localhost:3000/hunts/${huntId}`, {
+    let userId = window.document.cookie
+    let res = await fetch(`http://localhost:3000/hunts/${huntId}/?user=${userId}`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
@@ -21,6 +22,7 @@ class HuntPage extends Component{
       }
     })
     let jsonResponse = await res.json();
+    console.log(jsonResponse);
     this.setState({
       AllClues: jsonResponse,
       hunt_description: jsonResponse[0].description
