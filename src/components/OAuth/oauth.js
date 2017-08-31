@@ -11,7 +11,6 @@ class OAuth extends React.Component{
   }
 
   async responseFacebook (response) {
-    console.log(response);
     let name = response.name;
     let firstName = name.substr(0, name.indexOf(' '))
     let lastName = name.substr(name.indexOf(' ')+1);
@@ -21,6 +20,7 @@ class OAuth extends React.Component{
       accessToken: response.accessToken,
       email: response.email
     }
+    console.log(userObj);
     let res = await fetch('https://scavengers-server.herokuapp.com/user', {
       method: 'POST',
       headers: {
