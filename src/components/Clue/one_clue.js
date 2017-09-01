@@ -18,10 +18,13 @@ class CluePage extends Component {
    let endpoint = this.state.clue_url;
    let classCheck = this.state.clue_class;
    let file = event.target.files[0];
+
    this.setState({value: event.target.value},()=>{
     var reader = new FileReader();
+
     reader.onload = function(){
       var dataURL = reader.result;
+
       // async.parallel( ()=>{
       fetch(`https://scavengers-server.herokuapp.com/classify/${endpoint}`,{
           method: 'POST',
@@ -51,6 +54,7 @@ class CluePage extends Component {
       }
       // reader.readAsArrayBuffer(file);
       reader.readAsDataURL(file);
+      console.log(file);
     })
   };
 
@@ -81,7 +85,7 @@ class CluePage extends Component {
         </div>
         <h1>{this.state.clue_description}</h1>
         <button className='lgbutton'>
-          <input type="file" accept="image/*" capture="camera" value={this.state.value} onChange={this.handleChange}/>
+          <input type="file" accept="image/jpg" capture="camera" value={this.state.value} onChange={this.handleChange}/>
         </button>
       </div>
     )
