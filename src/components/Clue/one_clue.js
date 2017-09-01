@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import async from 'async';
 
+
 // import Style from '../../App.css';
 
 class CluePage extends Component {
@@ -20,19 +21,20 @@ class CluePage extends Component {
    let file = event.target.files[0];
 
    this.setState({value: event.target.value},()=>{
-    var reader = new FileReader();
+     let dataImg = new FormData();
+     dataImg.append('file', file);
 
-    reader.onload = function(){
-      var dataURL = reader.result;
-
-      // async.parallel( ()=>{
+      //  axios.post('/files', data)
+      //    .then(response => dispatch(uploadSuccess(response))
+      //    .catch(error => dispatch(uploadFail(error))
       fetch(`https://scavengers-server.herokuapp.com/classify/${endpoint}`,{
           method: 'POST',
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-          },body:JSON.stringify({data: dataURL})
-        }).then(res=>{
+          },data: dataImg
+        })
+        .then(res=>{
           res.json().then(data=>{
             if(!data.length){
               console.log('no match')
@@ -51,10 +53,18 @@ class CluePage extends Component {
               console.log(data)
           })
         })
-      }
-      // reader.readAsArrayBuffer(file);
-      reader.readAsDataURL(file);
-      console.log(file);
+
+    // var reader = new FileReader();
+    //
+    // reader.onload = function(){
+    //   var dataURL = reader.result;
+    //
+    //   async.parallel( ()=>{
+
+      // }
+    //   reader.readAsArrayBuffer(file);
+    //   reader.readAsDataURL(file);
+    //   console.log(file);
     })
   };
 
