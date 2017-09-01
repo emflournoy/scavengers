@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import async from 'async';
+import axios from 'axios';
 
 
 // import Style from '../../App.css';
@@ -21,19 +22,25 @@ class CluePage extends Component {
    let file = event.target.files[0];
 
    this.setState({value: event.target.value},()=>{
-     let dataImg = new FormData();
-     dataImg.append('file', file);
+     let data = new FormData();
+     data.append('file', document);
+     data.append('name', name);
+     console.log(data);
 
-      //  axios.post('/files', data)
-      //    .then(response => dispatch(uploadSuccess(response))
-      //    .catch(error => dispatch(uploadFail(error))
-      fetch(`https://scavengers-server.herokuapp.com/classify/${endpoint}`,{
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-          },data: dataImg
-        })
+     axios.post(`http://localhost:3000/classify/${endpoint}`, data)
+        //  .then(response => dispatch(uploadSuccess(response))
+        //  .catch(error => dispatch(uploadFail(error))
+
+    //  let dataImg = new FormData();
+    //  dataImg.append('file', file);
+     //
+    //  fetch(`http://localhost:3000/classify/${endpoint}`,{
+      //     method: 'POST',
+      //     headers: {
+      //       'Accept': 'application/json',
+      //       'Content-Type': 'application/json',
+      //     },data: dataImg
+      //   })
         .then(res=>{
           res.json().then(data=>{
             if(!data.length){
@@ -42,7 +49,7 @@ class CluePage extends Component {
             }else if(data[0].class === classCheck){
               let clueId = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
               console.log('it is the same')
-              fetch(`https://scavengers-server.herokuapp.com/user/${clueId}/?user=${userId}`, {
+              fetch(`http://localhost:3000/user/${clueId}/?user=${userId}`, {
                 method: 'PATCH',
                 headers: {
                   'Accept': 'application/json',
