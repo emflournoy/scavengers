@@ -21,9 +21,15 @@ class CluePage extends Component {
    let file = event.target.files[0];
    let data = new FormData();
    data.append('file', file);
-   data.append('name', {'name': 'Image to Classify'});
+
+
+  //  data.append('name', {'name': 'Image to Classify'});
+
    this.setState({value: event.target.value},()=>{
-    axios.post(`https://scavengers-server.herokuapp.com/classify/${endpoint}`, data)
+
+     console.log(data);
+
+    axios.post(`https://scavengers-server.herokuapp.com/classify/${endpoint}`, { data })
     .then(res=>{
       console.log(res);
         if(!res.data.length){
@@ -54,7 +60,9 @@ class CluePage extends Component {
        'Content-Type': 'application/json'
      }
    })
+
    let jsonResponse = await res.json();
+
    this.setState({
      clue_url: jsonResponse.photo_url,
      clue_class: jsonResponse.photo_class,
