@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import async from 'async';
-
+import axios from 'axios';
 
 // import Style from '../../App.css';
 
@@ -19,52 +19,28 @@ class CluePage extends Component {
    let endpoint = this.state.clue_url;
    let classCheck = this.state.clue_class;
    let file = event.target.files[0];
-
+   let data = new FormData();
+   data.append('file', file);
+   data.append('name', {'name': 'Image to Classify'});
    this.setState({value: event.target.value},()=>{
-     let dataImg = new FormData();
-     dataImg.append('file', file);
-
-      //  axios.post('/files', data)
-      //    .then(response => dispatch(uploadSuccess(response))
-      //    .catch(error => dispatch(uploadFail(error))
-      fetch(`https://scavengers-server.herokuapp.com/classify/${endpoint}`,{
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-          },data: dataImg
-        })
-        .then(res=>{
-          res.json().then(data=>{
-            if(!data.length){
-              console.log('no match')
-              return
-            }else if(data[0].class === classCheck){
-              let clueId = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
-              console.log('it is the same')
-              fetch(`https://scavengers-server.herokuapp.com/user/${clueId}/?user=${userId}`, {
-                method: 'PATCH',
-                headers: {
-                  'Accept': 'application/json',
-                  'Content-Type': 'application/json',
-                }
-              })
+    axios.post(`https://scavengers-server.herokuapp.com/classify/${endpoint}`, data)
+    .then(res=>{
+      console.log(res);
+        if(!res.data.length){
+          console.log('no match')
+          return
+        }else if(res.data[0].class === classCheck){
+          let clueId = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
+          console.log('it is the same')
+          fetch(`https://scavengers-server.herokuapp.com/user/${clueId}/?user=${userId}`, {
+            method: 'PATCH',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
             }
-              console.log(data)
           })
-        })
-
-    // var reader = new FileReader();
-    //
-    // reader.onload = function(){
-    //   var dataURL = reader.result;
-    //
-    //   async.parallel( ()=>{
-
-      // }
-    //   reader.readAsArrayBuffer(file);
-    //   reader.readAsDataURL(file);
-    //   console.log(file);
+        }
+      })
     })
   };
 
@@ -95,7 +71,7 @@ class CluePage extends Component {
         </div>
         <h1>{this.state.clue_description}</h1>
         <button className='lgbutton'>
-          <input type="file" accept="image/jpg" capture="camera" value={this.state.value} onChange={this.handleChange}/>
+          <input type="file" accept="image/*" capture="camera" value={this.state.value} onChange={this.handleChange}/>
         </button>
       </div>
     )
