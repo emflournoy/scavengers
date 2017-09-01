@@ -24,7 +24,7 @@ class CluePage extends Component {
    data.append('name', {'name': 'Image to Classify'});
    console.log(data);
    this.setState({value: event.target.value},()=>{
-    axios.post(`http://localhost:3000/classify/${endpoint}`, { data })
+    axios.post(`http://localhost:3000/classify/${endpoint}`, data )
     .then(res=>{
       console.log(res);
         if(!res.data.length){
