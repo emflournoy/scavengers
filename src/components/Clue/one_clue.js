@@ -29,7 +29,7 @@ class CluePage extends Component {
 
      console.log(data);
 
-    axios.post(`https://scavengers-server.herokuapp.com/classify/${endpoint}`, { data })
+    axios.post(`https://scavengers-server.herokuapp.com/classify/${endpoint}`, data)
     .then(res=>{
       console.log(res);
         if(!res.data.length){
