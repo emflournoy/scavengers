@@ -9,7 +9,7 @@ class CluePage extends Component {
    super(props);
    this.state = {value: '',
     clue_description:'',
-    resultPhoto: './images/x-mark.png'};
+    resultPhoto: '../src/images/x-mark.png'};
 
    this.handleChange = this.handleChange.bind(this);
   //  this.handleSubmit = this.handleSubmit.bind(this);
