@@ -12,7 +12,7 @@ class CluePage extends Component {
    super(props);
    this.state = {value: '',
     clue_description:'',
-    resultPhoto: {wrongImg}};
+    resultPhoto: '../../images/x-mark.png'};
 
    this.handleChange = this.handleChange.bind(this);
   //  this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,12 +32,12 @@ class CluePage extends Component {
       console.log(res);
         if(!res.data.length){
           console.log('no match')
-          this.setState({resultPhoto: {wrongImg}})
+          this.setState({resultPhoto: '../../images/x-mark.png'})
           return
         }else if(res.data[0].class === classCheck){
           let clueId = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
           console.log('it is the same')
-          this.setState({resultPhoto: {rightImg}})
+          this.setState({resultPhoto: '../../images/check-mark.png'})
           fetch(`https://scavengers-server.herokuapp.com/user/${clueId}/?user=${userId}`, {
             method: 'PATCH',
             headers: {
