@@ -72,7 +72,7 @@ class CluePage extends Component {
         </div>
         <h1>{this.state.clue_description}</h1>
         <div className='resultPhoto hide'>
-          <img src={this.state.resultPhoto}>
+          <img src={this.state.resultPhoto}></img>
         </div>
         <button className='lgbutton'>
           <input type="file" accept="image/*" capture="camera" value={this.state.value} onChange={this.handleChange}/>
