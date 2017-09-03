@@ -24,7 +24,7 @@ class LandingPage extends Component{
     this.setState({
       userId: window.document.cookie,
       userHunts : jsonResponse
-    })
+    }, ()=>{console.log(this.state);})
   }
   render() {
     return (
