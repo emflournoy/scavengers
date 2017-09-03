@@ -96,8 +96,8 @@ ul {
 .incomplete {
   background-color: rgba(213, 87, 59, 0.5); }
 
-.resultPhoto {
-  height: 200px;
+.resultPhoto img {
+  height: 25 vh;
   width: auto; }
 
 /*# sourceMappingURL=App.css.map */
