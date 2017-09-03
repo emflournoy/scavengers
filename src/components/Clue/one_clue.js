@@ -8,7 +8,7 @@ class CluePage extends Component {
   constructor(props) {
    super(props);
    this.state = {value: '',
-    clue_description:''
+    clue_description:'',
     resultPhoto: 'x-mark.png'};
 
    this.handleChange = this.handleChange.bind(this);
