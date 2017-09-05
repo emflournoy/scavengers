@@ -11,6 +11,12 @@
   position: fixed;
   top: 0;
   z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h2{
+    margin-left: 7vw;
+  }
 }
 
 
@@ -103,11 +109,26 @@ ul{
 
 .complete{
   background-color: rgba($green, .5);
-  border: 4px solid $green;}
+  border: 4px solid $green;
+}
 
 .incomplete{
-  background-color: rgba($red, .5)}
+  background-color: rgba($red, .5)
+}
 
 .resultPhoto img{
   height: 25vh;
-  width: auto;}
+  width: auto;
+}
+
+.clue-des {
+  margin-top: 30px;
+  padding: 20px;
+  text-align: center;
+}
+
+.home-logo{
+  height: 8vh;
+  width: 8vh;
+  margin-right: 7vw;
+}

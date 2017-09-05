@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
+import home_logo from '../../images/home_logo.png';
 import AllClues from './allclues';
 // import Style from '../../App.css';
 
@@ -35,6 +36,10 @@ class HuntPage extends Component{
     return(
       <div className='body'>
         <div className='nav'>
+          <h2>ScaVengerS</h2>
+          <Link to='/LandingPage'>
+            <img src={home_logo} className="home-logo"></img>
+          </Link>
         </div>
         <h3>{this.state.hunt_description}</h3>
           <div className='allClueCards'>

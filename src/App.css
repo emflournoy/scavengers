@@ -9,7 +9,12 @@
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 2; }
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .nav h2 {
+    margin-left: 7vw; }
 
 .body {
   width: 100%;
@@ -99,5 +104,15 @@ ul {
 .resultPhoto img {
   height: 25vh;
   width: auto; }
+
+.clue-des {
+  margin-top: 30px;
+  padding: 20px;
+  text-align: center; }
+
+.home-logo {
+  height: 8vh;
+  width: 8vh;
+  margin-right: 7vw; }
 
 /*# sourceMappingURL=App.css.map */

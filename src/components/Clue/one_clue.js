@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import async from 'async';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import home_logo from '../../images/home_logo.png';
 import unchecked from '../../images/unchecked.png'
 import wrongImg from '../../images/x-mark.png'
 import rightImg from '../../images/check-mark.png'
@@ -80,13 +82,17 @@ class CluePage extends Component {
     return (
       <div className='body'>
         <div className='nav'>
+          <h2>ScaVengerS</h2>
+          <Link to='/LandingPage'>
+            <img src={home_logo} className="home-logo"></img>
+          </Link>
         </div>
-        <h1>{this.state.clue_description}</h1>
+        <h1 className='clue-des'>{this.state.clue_description}</h1>
         <div className='resultPhoto hide'>
           <img src={this.state.resultPhoto}></img>
         </div>
         <button className='lgbutton'>
-          <input type="file" accept="image/*" capture="camera" value={this.state.value} onChange={this.handleChange}/>
+          <input className='image-input' type="file" accept="image/*" capture="camera" value={this.state.value} onChange={this.handleChange}/>
         </button>
       </div>
     )
