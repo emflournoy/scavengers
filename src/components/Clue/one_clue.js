@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import async from 'async';
 import axios from 'axios';
-
+import unchecked from '../../images/unchecked.png'
 import wrongImg from '../../images/x-mark.png'
 import rightImg from '../../images/check-mark.png'
 
@@ -12,7 +12,7 @@ class CluePage extends Component {
    super(props);
    this.state = {value: '',
     clue_description:'',
-    resultPhoto: `${wrongImg}`};
+    resultPhoto: `${unchecked}`};
 
    this.handleChange = this.handleChange.bind(this);
   //  this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,7 +29,7 @@ class CluePage extends Component {
    this.setState({value: event.target.value},()=>{
     axios.post(`https://scavengers-server.herokuapp.com/classify/${endpoint}`, data)
     .then(res=>{
-      console.log(res);
+      console.log(res, endpoint);
         if(!res.data.length){
           console.log('no match')
           this.setState({resultPhoto: `${wrongImg}`})
