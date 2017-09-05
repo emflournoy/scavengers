@@ -70,7 +70,7 @@ class CluePage extends Component {
    this.setState({
      clue_url: jsonResponse.photo_url,
      clue_class: jsonResponse.photo_class,
-     clue_description: jsonResponse .description
+     clue_description: jsonResponse.description
    },()=>{
      console.log(this.state);
    })
