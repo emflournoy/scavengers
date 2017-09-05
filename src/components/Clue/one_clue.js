@@ -44,6 +44,12 @@ class CluePage extends Component {
               'Accept': 'application/json',
               'Content-Type': 'application/json',
             }
+          }).then(()=>{
+            setTimeout(function () {
+              let href = window.location.href;
+              let newHref = href.slice(0, href.indexOf('/CluePage/'));
+              window.location.href = newHref + '/HuntPage/1'
+            }, 800);
           })
         }
       })
