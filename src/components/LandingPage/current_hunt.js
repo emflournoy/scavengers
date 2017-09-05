@@ -5,7 +5,9 @@ import {
 
 // import Style from '../../App.css';
 import HuntPage from '../Hunt/huntpage';
-import BoulderImg from '../../images/Boulder.jpg'
+import BoulderImg from '../../images/Boulder.jpg';
+import TotalPoints from './totalPoints';
+
 
 const CurrentHunt = ({data}) => (
   <div className='currentHunt'>
@@ -19,9 +21,7 @@ const CurrentHunt = ({data}) => (
         </div>
       </div>
       <div className='curHuntSection'>
-        <div>
-          <h5>0 / {data.total_clues} completed</h5>
-        </div>
+        <TotalPoints data={data.total_clues}/>
         <div>
           <Link to={{
             pathname: `/HuntPage/${data.id}`

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import CurrentHunt from './current_hunt';
 import TopUsers from './top_users';
 
+
 class LandingPage extends Component{
   constructor(){
     super();
