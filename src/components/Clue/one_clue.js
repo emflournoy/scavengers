@@ -51,6 +51,8 @@ class CluePage extends Component {
               window.location.href = newHref + '/HuntPage/1'
             }, 800);
           })
+        } else {
+          this.setState({resultPhoto: `${wrongImg}`})
         }
       })
     })
