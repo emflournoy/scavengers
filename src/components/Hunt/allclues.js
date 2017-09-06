@@ -9,7 +9,7 @@ class AllClues extends Component {
   constructor(){
     super();
     this.state={
-      completedstatus: 'incomplete'
+      completedstatus: 'untouched'
     }
   }
 
@@ -18,6 +18,10 @@ class AllClues extends Component {
     this.setState({pathName: `/CluePage/${this.props.data.clue_id}`},()=>{
       if (this.props.data.completed){
         this.setState({completedstatus: 'complete', pathName: '/HuntPage/1'})
+      } else if(!this.props.data.completed){
+        this.setState({completedstatus: 'untouched'})
+      } else {
+        this.setState({completedstatus: 'untouched'})
       }
     })
   }

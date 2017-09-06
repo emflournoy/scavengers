@@ -20,6 +20,7 @@ h1{
   align-items: center;
   h2{
     margin-left: 7vw;
+    color:$ltblue;
   }
 }
 
@@ -32,7 +33,9 @@ h1{
   justify-content: space-around;
   align-items: center;
   // background-image: url(./images/footer_lodyas.png);
-  background:linear-gradient(0deg,#545F66, 60%, $ltblue );
+  background:-webkit-linear-gradient(#545F66, 50%, $ltblue);
+  background:-o-linear-gradient(#545F66, 50%, $ltblue);
+  background:linear-gradient(#545F66, 50%, $ltblue) ;
 
 }
 
@@ -48,17 +51,18 @@ h1{
 .helloName{
   font-size: 2em;
   margin-bottom: 0;
+  color:#f7fff6;
 }
 
 .currentHunt{
   height: 25%;
   width: 80%;
-  border: 2px solid $green;
+  border: 2px solid $ltblue;
   border-radius: 5px;
   text-align: left;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0px 5px 7px 0px rgba(0,0,0,0.75);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 5px 7px 0px #585F54;
   p{
     font-size: .7em;
     margin-left: 10px;
@@ -76,22 +80,23 @@ h1{
 .smbutton{
   height: 30px;
   width: 120px;
-  border: 2px solid $red;
+  border: 1px solid $ltblue;
   border-radius: 5px;
   text-align: center;
   padding-top: 0;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .lgbutton{
   height: 60px;
   width: 200px;
-  border: 4px solid $ltblue;
-  color: $ltblue;
+  border: 2px solid #545F66;
+  color: #545F66;
   border-radius: 8px;
   text-align: center;
   padding-top: 0;
   background-color: rgba(255, 255, 255, 0);
+  box-shadow: 3px 5px 7px 0px #585F54;
   margin-bottom: 5vh;
 }
 
@@ -110,10 +115,23 @@ ul{
   padding: 0;
 }
 .hunt-des{
-  margin-top: 60px;
-  padding: 20px;
+  margin-top: -25vh;
+  margin-bottom: 5vh;
+  padding: 3%;
   text-align: center;
-  font-size: 1.6em;
+  font-size: 3em;
+  color:#fbfff8;
+  z-index:1;
+}
+.HPimage{
+  margin-top: 10vh;
+  opacity: 0.65;
+  height:30vh;
+  width: 98%;
+  box-shadow: 0px 2px 7px 3px #585F54;
+  margin-bottom:2vh;
+  border-bottom: 2px solid #585F54;
+  z-index: 0;
 }
 
 .allClueCards{
@@ -129,17 +147,17 @@ ul{
 
 .cluecard {
   float: left;
-  height: 80px;
-  width: 80px;
-  border: 4px solid #D5573B;
+  height: 13vh;
+  width: 13vh;
+  border: 2px solid $ltblue;
   border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 0;
-  margin-top: 3vw;
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 3px 5px 7px 0px rgba(0,0,0,0.75);
+  margin:2px;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 3px 5px 7px 0px #585F54;
   font-size: 40px;
   img{
     width: 50px;
@@ -151,14 +169,18 @@ ul{
 }
 
 .complete{
-  background-color: rgba($green, .7);
-  border: 4px solid $green;
+  background-color: rgba(255,255,255,0);
+  border: 2px solid $green;
 }
 
 .incomplete{
-  background-color: rgba($red, .7)
+  background-color: rgba(255,255,255,0);
+  border: 2px solid $red;
 }
-
+.untouched{
+  background-color: rgba(255,255,255,0);
+  border: 2px solid $ltblue;
+}
 .resultPhoto img{
   height: 25vh;
   width: auto;
