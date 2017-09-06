@@ -5,33 +5,33 @@ class TopUsers extends Component{
   constructor(){
     super();
     this.state = {
-      topUsers:[],
+      scores:[],
+      dog: "fawkes"
     }
   }
 
   async componentWillMount(){
-    let res = await fetch(`https://scavengers-server.herokuapp.com/user/`, {
+    let res = await fetch(`http://localhost:3000/user`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-      }})
+      }
+    })
     let jsonResponse = await res.json();
+    console.log(Array.isArray(jsonResponse))
     this.setState({
-      topUsers: jsonResponse,
+      scores: jsonResponse,
     }, ()=>{console.log(this.state);})
   }
   render() {
+    console.log(this.state)
     return (
       <div>
         <h2>Top Teams</h2>
-        <h3>{topUsers}</h3>
-        <ul>
-          <li>1. Team Skhunts</li>
-          <li>2. Team meaT</li>
-          <li>3. Team Cheese</li>
-          <li>4. Team Poop</li>
-        </ul>
+        {this.state.scores.map(el=>{
+          <li>{el.firstname}</li>
+        })}
       </div>
     )
   }

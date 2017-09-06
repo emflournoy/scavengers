@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import CurrentHunt from './current_hunt';
 import TopUsers from './top_users';
 import home_logo from '../../images/home_logo.png';
