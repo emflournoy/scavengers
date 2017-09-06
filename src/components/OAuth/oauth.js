@@ -21,7 +21,7 @@ class OAuth extends React.Component{
       email: response.email
     }
     console.log(userObj);
-    let res = await fetch('http://localhost:3000/user', {
+    let res = await fetch('https://scavengers-server.herokuapp.com/user', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

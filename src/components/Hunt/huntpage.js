@@ -16,7 +16,7 @@ class HuntPage extends Component{
   async componentWillMount(){
     let huntId = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
     let userID = window.document.cookie;
-    let res = await fetch(`http://localhost:3000/hunts/${huntId}/?user=${userID}`, {
+    let res = await fetch(`https://scavengers-server.herokuapp.com/hunts/${huntId}/?user=${userID}`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',

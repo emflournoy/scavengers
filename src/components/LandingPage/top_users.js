@@ -12,7 +12,7 @@ class TopUsers extends Component{
   }
 
   async componentWillMount(){
-    let res = await fetch(`http://localhost:3000/user`, {
+    let res = await fetch(`https://scavengers-server.herokuapp.com/user`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
