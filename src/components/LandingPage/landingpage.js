@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import CurrentHunt from './current_hunt';
 import TopUsers from './top_users';
+import home_logo from '../../images/home_logo.png';
+
 
 class LandingPage extends Component{
   constructor(){
@@ -13,7 +15,7 @@ class LandingPage extends Component{
 
   async componentWillMount(){
     let userId = window.document.cookie
-    let res = await fetch(`https://scavengers-server.herokuapp.com/user/hunts/${userId}`, {
+    let res = await fetch(`http://localhost:3000/user/hunts/${userId}`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
@@ -29,6 +31,10 @@ class LandingPage extends Component{
     return (
       <div className='body'>
         <div className='nav'>
+          <h2>ScaVengerS</h2>
+          <Link to='/LandingPage'>
+            <img src={home_logo} className="home-logo"></img>
+          </Link>
         </div>
           {this.state.userHunts.map((ele, index)=>(
             <CurrentHunt userid={this.state.userId} data={ele} key={index}/>
