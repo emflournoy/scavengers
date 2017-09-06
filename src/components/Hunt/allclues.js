@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   Link
 } from 'react-router-dom';
+import looking_glass from '../../images/magnifying_glass.png';
 
 
 class AllClues extends Component {
@@ -25,7 +26,7 @@ class AllClues extends Component {
     return (
       <div className='allcards'>
         <Link to={{pathname: this.state.pathName}}>
-          <button className={`cluecard ${this.state.completedstatus}`}>{this.props.num}</button>
+          <button className={`cluecard ${this.state.completedstatus}`}><img src={looking_glass}></img></button>
         </Link>
       </div>
     );

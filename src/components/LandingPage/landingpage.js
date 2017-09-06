@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 // import Style from '../../App.css';
 import CurrentHunt from './current_hunt';
 import TopUsers from './top_users';
+import home_logo from '../../images/home_logo.png';
 
 
 class LandingPage extends Component{
@@ -31,6 +33,10 @@ class LandingPage extends Component{
     return (
       <div className='body'>
         <div className='nav'>
+          <h2>ScaVengerS</h2>
+          <Link to='/LandingPage'>
+            <img src={home_logo} className="home-logo"></img>
+          </Link>
         </div>
           {this.state.userHunts.map((ele, index)=>(
             <CurrentHunt userid={this.state.userId} data={ele} key={index}/>

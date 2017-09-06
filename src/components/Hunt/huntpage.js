@@ -41,7 +41,7 @@ class HuntPage extends Component{
             <img src={home_logo} className="home-logo"></img>
           </Link>
         </div>
-        <h3>{this.state.hunt_description}</h3>
+        <h3 className='hunt-des'>{this.state.hunt_description}</h3>
           <div className='allClueCards'>
           {this.state.AllClues.map((ele, index)=>(
             <AllClues data={ele} key={index} num={index+1}/>
