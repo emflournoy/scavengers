@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import Style from '../../App.css';
 import CurrentHunt from './current_hunt';
 import TopUsers from './top_users';
 import home_logo from '../../images/home_logo.png';
@@ -11,7 +10,8 @@ class LandingPage extends Component{
     super();
     this.state = {
       userId:0,
-      userHunts:[]
+      userHunts:[],
+      userName:'User'
     }
   }
 
@@ -24,11 +24,15 @@ class LandingPage extends Component{
         'Content-Type': 'application/json',
       }})
     let jsonResponse = await res.json();
+    console.log('jsonResponse', jsonResponse);
     this.setState({
       userId: window.document.cookie,
-      userHunts : jsonResponse
+      userHunts : [jsonResponse[0]],
+      userName: jsonResponse[1].firstname + ' ' + jsonResponse[1].lastname,
     }, ()=>{console.log(this.state);})
   }
+
+
   render() {
     return (
       <div className='body'>
@@ -38,10 +42,13 @@ class LandingPage extends Component{
             <img src={home_logo} className="home-logo"></img>
           </Link>
         </div>
-          {this.state.userHunts.map((ele, index)=>(
-            <CurrentHunt userid={this.state.userId} data={ele} key={index}/>
-          ))}
-        <TopUsers/>
+        <div className="LPbody">
+          <h3 className="helloName"> Hello, {this.state.userName}</h3>
+           {this.state.userHunts.map((ele, index)=>(
+             <CurrentHunt userid={this.state.userId} data={ele} key={index}/>
+           ))}
+          <TopUsers/>
+        </div>
       </div>
     )
   }
