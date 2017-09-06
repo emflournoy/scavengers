@@ -5,8 +5,9 @@ class TopUsers extends Component{
   constructor(){
     super();
     this.state = {
-      scores:[],
-      dog: "fawkes"
+      high1: '',
+      high2: '',
+      high3: '',
     }
   }
 
@@ -20,8 +21,11 @@ class TopUsers extends Component{
     })
     let jsonResponse = await res.json();
     console.log(Array.isArray(jsonResponse))
+    console.log(jsonResponse)
     this.setState({
-      scores: jsonResponse,
+      high1: jsonResponse[jsonResponse.length-1].firstname,
+      high2: jsonResponse[jsonResponse.length-2].firstname,
+      high3: jsonResponse[jsonResponse.length-3].firstname,
     }, ()=>{console.log(this.state);})
   }
   render() {
@@ -29,9 +33,11 @@ class TopUsers extends Component{
     return (
       <div>
         <h2>Top Teams</h2>
-        {this.state.scores.map(el=>{
-          <li>{el.firstname}</li>
-        })}
+        <ul>
+          <li>1. {this.state.high1}</li>
+          <li>2. {this.state.high2}</li>
+          <li>3. {this.state.high3}</li>
+        </ul>
       </div>
     )
   }
