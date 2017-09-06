@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   Link
 } from 'react-router-dom';
-import looking_glass from '../../images/magnifying_glass.png';
+import looking_glass from '../../images/magnifier2.png';
 
 
 class AllClues extends Component {

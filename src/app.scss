@@ -1,7 +1,7 @@
 @import 'tools';
 
 *{
-  font-family: $raleway;
+  font-family: $source;
 }
 h1{
   margin: 0px;
@@ -33,9 +33,9 @@ h1{
   justify-content: space-around;
   align-items: center;
   // background-image: url(./images/footer_lodyas.png);
-  background:-webkit-linear-gradient(#545F66, 50%, $ltblue);
-  background:-o-linear-gradient(#545F66, 50%, $ltblue);
-  background:linear-gradient(#545F66, 50%, $ltblue) ;
+  background:-webkit-linear-gradient($gray, 50%, $ltblue);
+  background:-o-linear-gradient($gray, 50%, $ltblue);
+  background:linear-gradient($gray, 50%, $ltblue) ;
 
 }
 
@@ -90,8 +90,8 @@ h1{
 .lgbutton{
   height: 60px;
   width: 200px;
-  border: 2px solid #545F66;
-  color: #545F66;
+  border: 2px solid $gray;
+  color: $gray;
   border-radius: 8px;
   text-align: center;
   padding-top: 0;

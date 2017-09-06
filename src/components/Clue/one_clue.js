@@ -3,7 +3,7 @@ import async from 'async';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import home_logo from '../../images/home_logo.png';
-import unchecked from '../../images/magnifying_glass.png';
+import unchecked from '../../images/magnifier2.png';
 // import unchecked from '../../images/unchecked.png';
 import wrongImg from '../../images/x-mark.png';
 import rightImg from '../../images/check-mark.png';
