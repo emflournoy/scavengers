@@ -35,7 +35,7 @@ class CluePage extends Component {
          let newHref = href.slice(0, href.indexOf('/CluePage/'));
          that.setState({resultPhoto: `${wrongImg}`,value: ''})
        }
-     }, 6000);
+     }, 30000);
      // NOTE: start of axios.post
     axios.post(`https://scavengers-server.herokuapp.com/classify/${endpoint}`, data)
     .then(res=>{
