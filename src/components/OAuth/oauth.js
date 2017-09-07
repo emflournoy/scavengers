@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-
-// import Style from '../../App.css';
 import { FacebookLogin } from 'react-facebook-login-component';
-// import REACT_APP_FB from '../../.env';
+import logo from '../../images/findIT-logo3.svg';
+import facebookLogo from '../../images/facebook-logo.png';
 
 class OAuth extends React.Component{
 
@@ -21,7 +20,7 @@ class OAuth extends React.Component{
       email: response.email
     }
     console.log(userObj);
-    let res = await fetch('https://scavengers-server.herokuapp.com/user', {
+    let res = await fetch('http://localhost:3000/user', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -38,16 +37,24 @@ class OAuth extends React.Component{
 
   render () {
     return (
-      <div>
-        <FacebookLogin socialId= '1288710811237257'
-                       language="en_US"
-                       scope="public_profile,email"
-                       responseHandler={this.responseFacebook}
-                       xfbml={true}
-                       fields="id,email,name"
-                       version="v2.5"
-                       className="facebook-login"
-                       buttonText="Login With Facebook"/>
+      <div className="opacity">
+        <div className="splashPage">
+          <div className="logo-body">
+            <img className="logo-img" src={logo}/>
+            <div className="login">
+              <img className="facebook-logo" src={facebookLogo}/>
+              <FacebookLogin socialId= '1288710811237257'
+                             language="en_US"
+                             scope="public_profile,email"
+                             responseHandler={this.responseFacebook}
+                             xfbml={true}
+                             fields="id,email,name"
+                             version="v2.5"
+                             className="facebook-login"
+                             buttonText="Login With Facebook"/>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

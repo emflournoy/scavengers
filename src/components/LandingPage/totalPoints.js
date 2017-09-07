@@ -21,7 +21,7 @@ class totalPoints extends Component {
   }
   async componentWillMount(){
     let userId = window.document.cookie
-    let res = await fetch(`https://scavengers-server.herokuapp.com/hunts/userhuntclue/${userId}`, {
+    let res = await fetch(`http://localhost:3000/hunts/userhuntclue/${userId}`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
@@ -38,7 +38,7 @@ class totalPoints extends Component {
   render(){
     return (
       <div>
-      <h5>{this.state.total_points} / {this.state.total_clues} completed</h5>
+      <h5 className="totpts">{this.state.total_points} / {this.state.total_clues} completed</h5>
       </div>
   )}
 }

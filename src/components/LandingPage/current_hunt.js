@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import {
   Link
 } from 'react-router-dom';
-
-// import Style from '../../App.css';
 import HuntPage from '../Hunt/huntpage';
 import BoulderImg from '../../images/Boulder.jpg';
 import TotalPoints from './totalPoints';
@@ -11,21 +9,13 @@ import TotalPoints from './totalPoints';
 
 const CurrentHunt = ({data}) => (
   <div className='currentHunt'>
-    <div>
+    <div className="opacity">
       <div className='curHuntSection'>
-        <div>
-          <img className='huntThumbnail' src={BoulderImg}></img>
-        </div>
-        <div>
-          <p>{data.description}</p>
-        </div>
-      </div>
-      <div className='curHuntSection'>
-        <TotalPoints data={data.total_clues}/>
+        <p>{data.description}</p>
         <div>
           <Link to={{
             pathname: `/HuntPage/${data.id}`
-          }}><button className='smbutton'>continue hunt</button></Link>
+          }}><button className='smbutton'><TotalPoints data={data.total_clues}/></button></Link>
         </div>
       </div>
     </div>

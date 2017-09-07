@@ -19,6 +19,9 @@ h1 {
   .nav h2 {
     margin-left: 7vw;
     color: #99DDC8; }
+  .nav.LP {
+    width: 90%;
+    padding-left: 5vw; }
 
 .body {
   width: 100%;
@@ -41,36 +44,46 @@ h1 {
 
 .helloName {
   font-size: 2em;
-  margin-bottom: 0;
+  margin-top: 0;
   color: #f7fff6; }
 
+.opacity {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2); }
+
 .currentHunt {
-  height: 25%;
-  width: 80%;
-  border: 2px solid #99DDC8;
-  border-radius: 5px;
+  height: 35%;
+  width: 100%;
+  margin-top: -50px;
   text-align: left;
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 5px 7px 0px #585F54; }
+  padding: 0;
+  background-image: url("./images/Boulder.jpg");
+  background-size: cover;
+  box-shadow: 1px 2px 8px 2px #585F54; }
   .currentHunt p {
-    font-size: .7em;
+    font-size: 1em;
+    margin-top: 0;
     margin-left: 10px;
-    width: 140px; }
+    margin-bottom: 5px;
+    width: 200px;
+    color: #f7fff6; }
   .currentHunt .curHuntSection {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 10px 0 10px; }
+    align-items: flex-end;
+    padding-top: 85px; }
 
 .smbutton {
   height: 30px;
-  width: 120px;
+  width: 100px;
   border: 1px solid #99DDC8;
+  color: #f7fff6;
   border-radius: 5px;
   text-align: center;
   padding-top: 0;
+  margin-left: -15%;
   background-color: rgba(255, 255, 255, 0); }
 
 .lgbutton {
@@ -85,24 +98,35 @@ h1 {
   box-shadow: 3px 5px 7px 0px #585F54;
   margin-bottom: 5vh; }
 
-.curHuntSection {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around; }
+.totpts {
+  font-size: 1em;
+  margin: 0; }
 
 .huntThumbnail {
-  height: 80px; }
+  width: 100%;
+  opacity: 0.7; }
+
+.LPHdes {
+  width: 50%;
+  height: 30%;
+  padding-left: 3%;
+  margin-top: 0; }
 
 ul {
   list-style: none;
   padding: 0; }
+  ul li {
+    font-size: 2em;
+    width: 100%;
+    margin-left: 22.5%;
+    text-align: left; }
 
 .hunt-des {
   margin-top: -25vh;
   margin-bottom: 5vh;
   padding: 3%;
   text-align: center;
-  font-size: 3em;
+  font-size: 2.5em;
   color: #fbfff8;
   z-index: 1; }
 
@@ -110,7 +134,7 @@ ul {
   margin-top: 10vh;
   opacity: 0.65;
   height: 30vh;
-  width: 98%;
+  width: 100%;
   box-shadow: 0px 2px 7px 3px #585F54;
   margin-bottom: 10vh;
   border-bottom: 2px solid #585F54;
@@ -144,8 +168,9 @@ ul {
     height: 50px; }
 
 .complete {
-  background-color: rgba(255, 255, 255, 0);
-  border: 2px solid #95BF74; }
+  background-color: rgba(149, 191, 116, 0.6);
+  border: 2px solid rgba(149, 191, 116, 0.6);
+  margin: 2px 0; }
 
 .incomplete {
   background-color: rgba(255, 255, 255, 0);
@@ -168,6 +193,52 @@ ul {
 .home-logo {
   height: 8vh;
   width: 8vh;
-  margin-right: 7vw; }
+  margin-right: 10vw; }
+
+.top-usrs-tbl {
+  height: 50%;
+  width: 100%;
+  text-align: center; }
+  .top-usrs-tbl h2 {
+    font-size: 2em;
+    font-weight: bold; }
+
+.splashPage {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  background-image: url("./images/findit-map.jpg");
+  background-size: cover;
+  background-position: center;
+  padding-top: 50%; }
+
+.logo-body {
+  height: 40%;
+  border: 1px solid #545F66;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-top: 35%; }
+
+.logo-img {
+  width: 100%; }
+
+.login {
+  padding: 0 90px;
+  display: flex;
+  justify-content: space-around;
+  align-content: center; }
+
+.facebook-logo {
+  width: 25px;
+  height: 25px; }
+
+.facebook-login {
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: rbg(241, 91, 42); }
+
+.find-it {
+  width: 200px;
+  height: 200px; }
 
 /*# sourceMappingURL=App.css.map */

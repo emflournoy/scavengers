@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import home_logo from '../../images/home_logo.png';
 import AllClues from './allclues';
 import Boulder from '../../images/Boulder.jpg';
-// import Style from '../../App.css';
 
 class HuntPage extends Component{
   constructor(){
@@ -16,7 +15,7 @@ class HuntPage extends Component{
   async componentWillMount(){
     let huntId = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
     let userID = window.document.cookie;
-    let res = await fetch(`https://scavengers-server.herokuapp.com/hunts/${huntId}/?user=${userID}`, {
+    let res = await fetch(`http://localhost:3000/hunts/${huntId}/?user=${userID}`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
@@ -45,9 +44,7 @@ class HuntPage extends Component{
           </Link>
         </div>
         <img className="HPimage" src={Boulder}/>
-        <h2 className="hunt-des">
-        {this.state.hunt_description}
-        </h2>
+        <h2 className="hunt-des">{this.state.hunt_description}</h2>
           <div className='allClueCards'>
           {this.state.AllClues.map((ele, index)=>(
             <AllClues data={ele} key={index} num={index+1}/>
