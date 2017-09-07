@@ -6,7 +6,7 @@ import home_logo from '../../images/home_logo.png';
 import unchecked from '../../images/magnifier2.png';
 import wrongImg from '../../images/x-mark.png';
 import rightImg from '../../images/check-mark.png';
-import loading from '../../images/Spinner.gif'
+import loading from '../../images/3.svg';
 // import Style from '../../App.css';
 
 class CluePage extends Component {

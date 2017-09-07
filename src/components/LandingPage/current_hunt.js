@@ -11,17 +11,14 @@ import TotalPoints from './totalPoints';
 
 const CurrentHunt = ({data}) => (
   <div className='currentHunt'>
-    <div>
+    <div className="opacity">
       <div className='curHuntSection'>
-          <img className='huntThumbnail' src={BoulderImg}></img>
-          <div className="LPHdes">
-            <p>{data.description}</p>
-            <div>
-              <Link to={{
-                pathname: `/HuntPage/${data.id}`
-              }}><button className='smbutton'><TotalPoints data={data.total_clues}/></button></Link>
-            </div>
-          </div>
+        <p>{data.description}</p>
+        <div>
+          <Link to={{
+            pathname: `/HuntPage/${data.id}`
+          }}><button className='smbutton'><TotalPoints data={data.total_clues}/></button></Link>
+        </div>
       </div>
     </div>
   </div>

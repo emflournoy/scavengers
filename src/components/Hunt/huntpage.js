@@ -45,9 +45,7 @@ class HuntPage extends Component{
           </Link>
         </div>
         <img className="HPimage" src={Boulder}/>
-        <h2 className="hunt-des">
-        {this.state.hunt_description}
-        </h2>
+        <h2 className="hunt-des">{this.state.hunt_description}</h2>
           <div className='allClueCards'>
           {this.state.AllClues.map((ele, index)=>(
             <AllClues data={ele} key={index} num={index+1}/>

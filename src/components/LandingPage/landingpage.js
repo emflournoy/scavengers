@@ -36,7 +36,7 @@ class LandingPage extends Component{
   render() {
     return (
       <div className='body'>
-        <div className='nav'>
+        <div className='nav LP'>
           <h2>ScaVengerS</h2>
           <Link to='/LandingPage'>
             <img src={home_logo} className="home-logo"></img>

@@ -22,6 +22,10 @@ h1{
     margin-left: 7vw;
     color:$ltblue;
   }
+  &.LP{
+    width:90%;
+    padding-left: 5vw;
+  }
 }
 
 
@@ -36,7 +40,6 @@ h1{
   background:-webkit-linear-gradient($gray, 50%, $ltblue);
   background:-o-linear-gradient($gray, 50%, $ltblue);
   background:linear-gradient($gray, 50%, $ltblue) ;
-
 }
 
 .LPbody{
@@ -50,45 +53,54 @@ h1{
 
 .helloName{
   font-size: 2em;
-  margin-bottom: 0;
+  margin-top: 0;
   color:#f7fff6;
 }
 
-// .currentHunt{
-  // height: 25%;
-  // width: 100%;
-  // // border: 2px solid $ltblue;
-  // // border-radius: 5px;
-  // text-align: left;
-  // padding: 5px 0;
-  // // background-color: rgba(255, 255, 255, 0.2);
-  // box-shadow: 0px 0px 8px 2px #585F54;
+.opacity{
+  height:100%;
+  width:100%;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.currentHunt{
+  height: 35%;
+  width: 100%;
+  margin-top: -50px;
+  // border: 2px solid $ltblue;
+  // border-radius: 5px;
+  text-align: left;
+  padding: 0;
+  background-image: url('./images/Boulder.jpg');
+  background-size: cover;
+  // background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 1px 2px 8px 2px #585F54;
   p{
     font-size: 1em;
     margin-top: 0;
     margin-left: 10px;
     margin-bottom: 5px;
-    width: 140px;
+    width: 200px;
     color:#f7fff6;
   }
   .curHuntSection{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    padding: 0;
-    box-shadow: 1px 2px 8px 2px #585F54;
+    align-items: flex-end;
+    padding-top: 85px;
   }
-// }
+}
 
 .smbutton{
   height: 30px;
-  width: 120px;
+  width: 100px;
   border: 1px solid $ltblue;
+  color: #f7fff6;
   border-radius: 5px;
   text-align: center;
   padding-top: 0;
-  margin-left: 5%;
+  margin-left: -15%;
   background-color: rgba(255, 255, 255, 0);
 }
 
@@ -112,8 +124,8 @@ h1{
 }
 
 .huntThumbnail{
-  height: 40%;
-  width: 50%;
+  width: 100%;
+  opacity: 0.7;
 }
 
 .LPHdes{
@@ -138,7 +150,7 @@ ul{
   margin-bottom: 5vh;
   padding: 3%;
   text-align: center;
-  font-size: 3em;
+  font-size: 2.5em;
   color:#fbfff8;
   z-index:1;
 }
@@ -146,7 +158,7 @@ ul{
   margin-top: 10vh;
   opacity: 0.65;
   height:30vh;
-  width: 98%;
+  width: 100%;
   box-shadow: 0px 2px 7px 3px #585F54;
   margin-bottom:10vh;
   border-bottom: 2px solid #585F54;
@@ -213,7 +225,7 @@ ul{
 .home-logo{
   height: 8vh;
   width: 8vh;
-  margin-right: 7vw;
+  margin-right: 10vw;
 }
 
 .top-usrs-tbl {
@@ -224,5 +236,40 @@ ul{
     font-size: 2em;
     font-weight: bold;
   }
+}
 
+.splashPage {
+  margin:0;
+  height:100vh;
+  width: 100%;
+  background-image: url('./images/findit-map.jpg');
+  background-size: cover;
+  background-position: center;
+  padding-top: 50%;
+}
+.logo-body{
+  height: 40%;
+  border:1px solid $gray;
+  background-color: rgba(0,0,0,0.4);
+  margin-top:35%;
+}
+.logo-img{
+  width:100%;
+}
+.login{
+  padding: 0 90px;
+  display:flex;
+  justify-content: space-around;
+  align-content: center;
+}
+.facebook-logo{
+  width:25px;
+  height:25px;
+}
+.facebook-login{
+  // margin-left:20px;
+  border:2px solid black;
+  border-radius:8px;
+  background-color: rgba(255,255,255,0.2);
+  color: rbg(241,91,42);
 }
