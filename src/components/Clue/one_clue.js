@@ -37,7 +37,7 @@ class CluePage extends Component {
        }
      }, 6000);
      // NOTE: start of axios.post
-    axios.post(`http://localhost:3000/classify/${endpoint}`, data)
+    axios.post(`https://scavengers-server.herokuapp.com/classify/${endpoint}`, data)
     .then(res=>{
       console.log(res, endpoint);
         if(!res.data.length){
@@ -48,7 +48,7 @@ class CluePage extends Component {
           let clueId = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
           console.log('it is the same')
           this.setState({resultPhoto: `${rightImg}`})
-          fetch(`http://localhost:3000/user/${clueId}/?user=${userId}`, {
+          fetch(`https://scavengers-server.herokuapp.com/user/${clueId}/?user=${userId}`, {
             method: 'PATCH',
             headers: {
               'Accept': 'application/json',
@@ -73,7 +73,7 @@ class CluePage extends Component {
 
  async componentWillMount(){
    let clueId = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
-   let res = await fetch(`http://localhost:3000/hunts/clues/${clueId}`, {
+   let res = await fetch(`https://scavengers-server.herokuapp.com/hunts/clues/${clueId}`, {
      method: 'GET',
      headers: {
        'Accept': 'application/json',
