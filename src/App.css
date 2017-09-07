@@ -44,25 +44,21 @@ h1 {
   margin-bottom: 0;
   color: #f7fff6; }
 
-.currentHunt {
-  height: 25%;
-  width: 80%;
-  border: 2px solid #99DDC8;
-  border-radius: 5px;
-  text-align: left;
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 5px 7px 0px #585F54; }
-  .currentHunt p {
-    font-size: .7em;
-    margin-left: 10px;
-    width: 140px; }
-  .currentHunt .curHuntSection {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px 0 10px; }
+p {
+  font-size: 1em;
+  margin-top: 0;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  width: 140px;
+  color: #f7fff6; }
+
+.curHuntSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  box-shadow: 1px 2px 8px 2px #585F54; }
 
 .smbutton {
   height: 30px;
@@ -71,6 +67,7 @@ h1 {
   border-radius: 5px;
   text-align: center;
   padding-top: 0;
+  margin-left: 5%;
   background-color: rgba(255, 255, 255, 0); }
 
 .lgbutton {
@@ -85,17 +82,28 @@ h1 {
   box-shadow: 3px 5px 7px 0px #585F54;
   margin-bottom: 5vh; }
 
-.curHuntSection {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around; }
+.totpts {
+  font-size: 1em;
+  margin: 0; }
 
 .huntThumbnail {
-  height: 80px; }
+  height: 40%;
+  width: 50%; }
+
+.LPHdes {
+  width: 50%;
+  height: 30%;
+  padding-left: 3%;
+  margin-top: 0; }
 
 ul {
   list-style: none;
   padding: 0; }
+  ul li {
+    font-size: 2em;
+    width: 100%;
+    margin-left: 22.5%;
+    text-align: left; }
 
 .hunt-des {
   margin-top: -25vh;
@@ -144,8 +152,9 @@ ul {
     height: 50px; }
 
 .complete {
-  background-color: rgba(255, 255, 255, 0);
-  border: 2px solid #95BF74; }
+  background-color: rgba(149, 191, 116, 0.6);
+  border: 2px solid rgba(149, 191, 116, 0.6);
+  margin: 2px 0; }
 
 .incomplete {
   background-color: rgba(255, 255, 255, 0);
@@ -169,5 +178,13 @@ ul {
   height: 8vh;
   width: 8vh;
   margin-right: 7vw; }
+
+.top-usrs-tbl {
+  height: 50%;
+  width: 100%;
+  text-align: center; }
+  .top-usrs-tbl h2 {
+    font-size: 2em;
+    font-weight: bold; }
 
 /*# sourceMappingURL=App.css.map */

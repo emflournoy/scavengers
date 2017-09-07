@@ -17,7 +17,7 @@ class LandingPage extends Component{
 
   async componentWillMount(){
     let userId = window.document.cookie
-    let res = await fetch(`https://scavengers-server.herokuapp.com/user/hunts/${userId}`, {
+    let res = await fetch(`http://localhost:3000/user/hunts/${userId}`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
@@ -47,7 +47,9 @@ class LandingPage extends Component{
            {this.state.userHunts.map((ele, index)=>(
              <CurrentHunt userid={this.state.userId} data={ele} key={index}/>
            ))}
-          <TopUsers/>
+           <div className="top-usrs-tbl">
+              <TopUsers/>
+           </div>
         </div>
       </div>
     )

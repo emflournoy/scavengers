@@ -13,20 +13,15 @@ const CurrentHunt = ({data}) => (
   <div className='currentHunt'>
     <div>
       <div className='curHuntSection'>
-        <div>
           <img className='huntThumbnail' src={BoulderImg}></img>
-        </div>
-        <div>
-          <p>{data.description}</p>
-        </div>
-      </div>
-      <div className='curHuntSection'>
-        <TotalPoints data={data.total_clues}/>
-        <div>
-          <Link to={{
-            pathname: `/HuntPage/${data.id}`
-          }}><button className='smbutton'>continue hunt</button></Link>
-        </div>
+          <div className="LPHdes">
+            <p>{data.description}</p>
+            <div>
+              <Link to={{
+                pathname: `/HuntPage/${data.id}`
+              }}><button className='smbutton'><TotalPoints data={data.total_clues}/></button></Link>
+            </div>
+          </div>
       </div>
     </div>
   </div>
