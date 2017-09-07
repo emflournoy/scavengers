@@ -237,4 +237,8 @@ ul {
   background-color: rgba(255, 255, 255, 0.2);
   color: rbg(241, 91, 42); }
 
+.find-it {
+  width: 200px;
+  height: 200px; }
+
 /*# sourceMappingURL=App.css.map */

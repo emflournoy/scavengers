@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import home_logo from '../../images/home_logo.png';
 import AllClues from './allclues';
 import Boulder from '../../images/Boulder.jpg';
-// import Style from '../../App.css';
 
 class HuntPage extends Component{
   constructor(){
