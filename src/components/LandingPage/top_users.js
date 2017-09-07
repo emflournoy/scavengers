@@ -41,9 +41,9 @@ class TopUsers extends Component{
         <div>
         <h2>Top Teams</h2>
           <ul>
-            <li>1. <span>{this.state.pts1} pts</span> {this.state.high1} </li>
-            <li>2. <span>{this.state.pts2} pts</span> {this.state.high2} </li>
-            <li>3. <span>{this.state.pts3} pts</span> {this.state.high3} </li>
+            <li className="leader"><span className="place">1.</span>  <span className="lead-name">{this.state.high1}</span> <span className="points">{this.state.pts1} pts</span></li>
+            li className="leader"><span className="place">2.</span>  <span className="lead-name">{this.state.high2}</span> <span className="points">{this.state.pts2} pts</span></li>
+            li className="leader"><span className="place">3.</span>  <span className="lead-name">{this.state.high3}</span> <span className="points">{this.state.pts3} pts</span></li>
           </ul>
         </div>
       </div>
