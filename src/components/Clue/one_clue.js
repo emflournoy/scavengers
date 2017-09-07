@@ -7,6 +7,8 @@ import unchecked from '../../images/magnifying_glass.png';
 // import unchecked from '../../images/unchecked.png';
 import wrongImg from '../../images/x-mark.png';
 import rightImg from '../../images/check-mark.png';
+import loading from '../../images/loading.gif';
+// import loading from '../../images/loading2.jpg';
 
 // import Style from '../../App.css';
 
@@ -18,7 +20,6 @@ class CluePage extends Component {
     resultPhoto: `${unchecked}`};
 
    this.handleChange = this.handleChange.bind(this);
-  //  this.handleSubmit = this.handleSubmit.bind(this);
  }
 
  handleChange(event) {
@@ -29,7 +30,16 @@ class CluePage extends Component {
    let data = new FormData();
    data.append('file', file);
    data.append('name', {'name': 'Image to Classify'});
-   this.setState({value: event.target.value},()=>{
+   this.setState({value: event.target.value, resultPhoto: `${loading}`},()=>{
+     var that = this;
+     setTimeout(function () {
+       if(that.state.resultPhoto !== `${wrongImg}`){
+         let href = window.location.href;
+         let newHref = href.slice(0, href.indexOf('/CluePage/'));
+         that.setState({resultPhoto: `${wrongImg}`,value: ''})
+       }
+     }, 6000);
+     // NOTE: start of axios.post
     axios.post(`http://localhost:3000/classify/${endpoint}`, data)
     .then(res=>{
       console.log(res, endpoint);
@@ -55,9 +65,11 @@ class CluePage extends Component {
             }, 800);
           })
         } else {
-          this.setState({resultPhoto: `${wrongImg}`})
+          this.setState({resultPhoto: `${wrongImg}`, value: ''})
         }
       })
+         // NOTE: end of axios.post
+
     })
   };
 
