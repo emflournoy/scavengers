@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 // import Style from '../../App.css';
 import { FacebookLogin } from 'react-facebook-login-component';
+import logo from '../../images/findIT-logo2.svg';
 // import REACT_APP_FB from '../../.env';
 
 class OAuth extends React.Component{
@@ -39,6 +40,7 @@ class OAuth extends React.Component{
   render () {
     return (
       <div>
+        <img src={logo} className='find-it'></img>
         <FacebookLogin socialId= '1288710811237257'
                        language="en_US"
                        scope="public_profile,email"

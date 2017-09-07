@@ -7,8 +7,8 @@ import unchecked from '../../images/magnifying_glass.png';
 // import unchecked from '../../images/unchecked.png';
 import wrongImg from '../../images/x-mark.png';
 import rightImg from '../../images/check-mark.png';
-import loading from '../../images/loading.gif';
-// import loading from '../../images/loading2.jpg';
+// import loading from '../../images/loading.gif';
+import loading from '../../images/loading2.jpg';
 
 // import Style from '../../App.css';
 
