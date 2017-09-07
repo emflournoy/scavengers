@@ -207,15 +207,13 @@ ul {
   margin: 0;
   height: 100vh;
   width: 100%;
-  background-image: url("./images/findit-map.jpg");
+  background-image: url("./images/findit-map2.jpg");
   background-size: cover;
   background-position: center;
   padding-top: 50%; }
 
 .logo-body {
   height: 40%;
-  border: 1px solid #545F66;
-  background-color: rgba(0, 0, 0, 0.4);
   margin-top: 35%; }
 
 .logo-img {

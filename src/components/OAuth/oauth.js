@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FacebookLogin } from 'react-facebook-login-component';
-import logo from '../../images/findIT-logo3.svg';
+import logo from '../../images/findIT-logo4.svg';
 import facebookLogo from '../../images/facebook-logo.png';
 
 class OAuth extends React.Component{
