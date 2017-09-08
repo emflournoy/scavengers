@@ -5,6 +5,7 @@ import TopUsers from './top_users';
 import home_logo from '../../images/home_logo.png';
 
 
+
 class LandingPage extends Component{
   constructor(){
     super();
@@ -17,19 +18,26 @@ class LandingPage extends Component{
 
   async componentWillMount(){
     let userId = window.document.cookie
-    let res = await fetch(`https://scavengers-server.herokuapp.com/user/hunts/${userId}`, {
+    let res = await fetch(`http://localhost:3000/user/hunts/${userId}`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       }})
     let jsonResponse = await res.json();
-    console.log('jsonResponse', jsonResponse);
+    let newRes = await fetch(`http://localhost:3000/user`, {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    }
+    })
+    let newjsonResponse = await newRes.json();
     this.setState({
       userId: window.document.cookie,
-      userHunts : [jsonResponse[0]],
-      userName: jsonResponse[1].firstname + ' ' + jsonResponse[1].lastname,
-    }, ()=>{console.log(this.state);})
+      userHunts : jsonResponse,
+      top_users: newjsonResponse
+    }, ()=>{console.log(this.state);});
   }
 
 
@@ -48,7 +56,9 @@ class LandingPage extends Component{
              <CurrentHunt userid={this.state.userId} data={ele} key={index}/>
            ))}
            <div className="top-usrs-tbl">
-              <TopUsers/>
+             {this.state.top_users.map((ele, index)=>(
+               <TopUsers data={ele} key={index}/>
+             ))}
            </div>
         </div>
       </div>
