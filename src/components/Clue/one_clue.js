@@ -7,6 +7,7 @@ import unchecked from '../../images/magnifier2.png';
 import wrongImg from '../../images/x-mark.png';
 import rightImg from '../../images/check-mark.png';
 import loading from '../../images/3.svg';
+import app_logo from '../../images/findit-icon.svg';
 
 
 class CluePage extends Component {
@@ -37,7 +38,7 @@ class CluePage extends Component {
        }
      }, 30000);
      // NOTE: start of axios.post
-    axios.post(`https://scavengers-server.herokuapp.com/classify/${endpoint}`, data)
+    axios.post(`http://localhost:3000/classify/${endpoint}`, data)
     .then(res=>{
       console.log(res, endpoint);
         if(!res.data.length){
@@ -48,7 +49,7 @@ class CluePage extends Component {
           let clueId = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
           console.log('it is the same')
           this.setState({resultPhoto: `${rightImg}`})
-          fetch(`https://scavengers-server.herokuapp.com/user/${clueId}/?user=${userId}`, {
+          fetch(`http://localhost:3000/user/${clueId}/?user=${userId}`, {
             method: 'PATCH',
             headers: {
               'Accept': 'application/json',
@@ -73,7 +74,7 @@ class CluePage extends Component {
 
  async componentWillMount(){
    let clueId = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
-   let res = await fetch(`https://scavengers-server.herokuapp.com/hunts/clues/${clueId}`, {
+   let res = await fetch(`http://localhost:3000/hunts/clues/${clueId}`, {
      method: 'GET',
      headers: {
        'Accept': 'application/json',
@@ -93,12 +94,12 @@ class CluePage extends Component {
   render(){
     return (
       <div className='body'>
-        <div className='nav'>
-          <h2>ScaVengerS</h2>
-          <Link to='/LandingPage'>
-            <img src={home_logo} className="home-logo"></img>
-          </Link>
-        </div>
+      <div className='nav LP'>
+        <img className="app-logo" src={app_logo}/>
+        <Link to='/LandingPage'>
+          <img className="home-logo" src={home_logo}/>
+        </Link>
+      </div>
         <h1 className='clue-des'>{this.state.clue_description}</h1>
         <div className='resultPhoto hide'>
           <img src={this.state.resultPhoto} ></img>

@@ -12,11 +12,11 @@ const CurrentHunt = ({data}) => (
     <div className="opacity">
       <div className='curHuntSection'>
         <p>{data.description}</p>
-        <div>
-          <Link to={{
-            pathname: `/HuntPage/${data.id}`
-          }}><button className='smbutton'><TotalPoints data={data.total_clues}/></button></Link>
-        </div>
+      </div>
+      <div className="smallButtonWrap">
+        <Link to={{
+          pathname: `/HuntPage/${data.id}`
+        }}><button className='smbutton'><TotalPoints data={data.total_clues}/></button></Link>
       </div>
     </div>
   </div>

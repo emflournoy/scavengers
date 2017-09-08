@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import home_logo from '../../images/home_logo.png';
 import AllClues from './allclues';
 import Boulder from '../../images/Boulder.jpg';
+import app_logo from '../../images/findit-icon.svg';
 
 class HuntPage extends Component{
   constructor(){
@@ -15,7 +16,7 @@ class HuntPage extends Component{
   async componentWillMount(){
     let huntId = window.location.href.substr(window.location.href.lastIndexOf('/')+1);
     let userID = window.document.cookie;
-    let res = await fetch(`https://scavengers-server.herokuapp.com/hunts/${huntId}/?user=${userID}`, {
+    let res = await fetch(`http://localhost:3000/hunts/${huntId}/?user=${userID}`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
@@ -36,11 +37,11 @@ class HuntPage extends Component{
   render(){
     // console.log(this.state.hunt_description)
     return(
-      <div className='body'>
-        <div className='nav'>
-          <h2>ScaVengerS</h2>
+      <div className='LPBody'>
+        <div className='nav LP'>
+          <img className="app-logo" src={app_logo}/>
           <Link to='/LandingPage'>
-            <img src={home_logo} className="home-logo"></img>
+            <img className="home-logo" src={home_logo}/>
           </Link>
         </div>
         <img className="HPimage" src={Boulder}/>
