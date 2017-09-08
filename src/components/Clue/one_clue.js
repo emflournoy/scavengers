@@ -7,6 +7,7 @@ import unchecked from '../../images/magnifier2.png';
 import wrongImg from '../../images/x-mark.png';
 import rightImg from '../../images/check-mark.png';
 import loading from '../../images/3.svg';
+import app_logo from '../../images/findit-icon.svg';
 
 
 class CluePage extends Component {
@@ -93,12 +94,12 @@ class CluePage extends Component {
   render(){
     return (
       <div className='body'>
-        <div className='nav'>
-          <h2>ScaVengerS</h2>
-          <Link to='/LandingPage'>
-            <img src={home_logo} className="home-logo"></img>
-          </Link>
-        </div>
+      <div className='nav LP'>
+        <img className="app-logo" src={app_logo}/>
+        <Link to='/LandingPage'>
+          <img className="home-logo" src={home_logo}/>
+        </Link>
+      </div>
         <h1 className='clue-des'>{this.state.clue_description}</h1>
         <div className='resultPhoto hide'>
           <img src={this.state.resultPhoto} ></img>

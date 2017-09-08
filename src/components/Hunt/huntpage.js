@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import home_logo from '../../images/home_logo.png';
 import AllClues from './allclues';
 import Boulder from '../../images/Boulder.jpg';
+import app_logo from '../../images/findit-icon.svg';
 
 class HuntPage extends Component{
   constructor(){
@@ -36,11 +37,11 @@ class HuntPage extends Component{
   render(){
     // console.log(this.state.hunt_description)
     return(
-      <div className='body'>
-        <div className='nav'>
-          <h2>ScaVengerS</h2>
+      <div className='LPBody'>
+        <div className='nav LP'>
+          <img className="app-logo" src={app_logo}/>
           <Link to='/LandingPage'>
-            <img src={home_logo} className="home-logo"></img>
+            <img className="home-logo" src={home_logo}/>
           </Link>
         </div>
         <img className="HPimage" src={Boulder}/>

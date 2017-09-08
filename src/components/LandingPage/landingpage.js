@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import CurrentHunt from './current_hunt';
 import TopUsers from './top_users';
 import home_logo from '../../images/home_logo.png';
-
+import app_logo from '../../images/findit-icon.svg';
 
 
 class LandingPage extends Component{
@@ -12,7 +12,9 @@ class LandingPage extends Component{
     this.state = {
       userId:0,
       userHunts:[],
-      userName:'User'
+      userName:'User',
+      top_users:[],
+
     }
   }
 
@@ -26,28 +28,30 @@ class LandingPage extends Component{
       }})
     let jsonResponse = await res.json();
     let newRes = await fetch(`http://localhost:3000/user`, {
-    method: 'GET',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-    }
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
     })
     let newjsonResponse = await newRes.json();
+    console.log(newjsonResponse);
     this.setState({
       userId: window.document.cookie,
-      userHunts : jsonResponse,
+      userHunts : jsonResponse[0],
+      userName: jsonResponse[1].firstname,
       top_users: newjsonResponse
-    }, ()=>{console.log(this.state);});
+    }, ()=>{console.log('state', this.state);});
   }
 
 
   render() {
     return (
-      <div className='body'>
+      <div className='LPBody'>
         <div className='nav LP'>
-          <h2>ScaVengerS</h2>
+          <img className="app-logo" src={app_logo}/>
           <Link to='/LandingPage'>
-            <img src={home_logo} className="home-logo"></img>
+            <img className="home-logo" src={home_logo}/>
           </Link>
         </div>
         <div className="LPbody">
@@ -56,8 +60,9 @@ class LandingPage extends Component{
              <CurrentHunt userid={this.state.userId} data={ele} key={index}/>
            ))}
            <div className="top-usrs-tbl">
+            <h3 className="topuserstext">Leaderboard</h3>
              {this.state.top_users.map((ele, index)=>(
-               <TopUsers data={ele} key={index}/>
+               <TopUsers data={ele} key={index} index={index} />
              ))}
            </div>
         </div>

@@ -16,12 +16,11 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center; }
-  .nav h2 {
-    margin-left: 7vw;
-    color: #99DDC8; }
+  .nav .app-logo {
+    height: 7vh; }
   .nav.LP {
-    width: 90%;
-    padding-left: 5vw; }
+    width: 98%;
+    padding-left: 10vw; }
 
 .body {
   width: 100%;
@@ -32,19 +31,29 @@ h1 {
   align-items: center;
   background: -webkit-linear-gradient(#545F66, 50%, #99DDC8);
   background: -o-linear-gradient(#545F66, 50%, #99DDC8);
-  background: linear-gradient(#545F66, 50%, #99DDC8); }
+  background: linear-gradient(#545F66, #f7fff6 25%, #545F66); }
+
+.LPBody {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(#545F66, #f7fff6, 50%, #545F66 100%); }
 
 .LPbody {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 80vh;
+  height: 83vh;
   width: 100%;
   align-items: center; }
 
 .helloName {
   font-size: 2em;
   margin-top: 0;
+  margin-bottom: 3px;
   color: #f7fff6; }
 
 .opacity {
@@ -53,11 +62,11 @@ h1 {
   background-color: rgba(0, 0, 0, 0.2); }
 
 .currentHunt {
-  height: 35%;
-  width: 100%;
-  margin-top: -50px;
+  height: 25%;
+  width: 95%;
+  margin: 5px 0 0 0;
   text-align: left;
-  padding: 0;
+  padding: 0 0 0 5px;
   background-image: url("./images/Boulder.jpg");
   background-size: cover;
   box-shadow: 1px 2px 8px 2px #585F54; }
@@ -68,12 +77,18 @@ h1 {
     margin-bottom: 5px;
     width: 200px;
     color: #f7fff6; }
+  .currentHunt .smallButtonWrap {
+    padding-top: 0px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    height: 40%; }
   .currentHunt .curHuntSection {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
-    padding-top: 95px; }
+    align-items: flex-start;
+    height: 60%; }
 
 .smbutton {
   height: 35px;
@@ -84,18 +99,18 @@ h1 {
   text-align: center;
   padding-top: 0;
   margin-left: -15%;
-  background-color: rgba(255, 255, 255, 0); }
+  background-color: rgba(255, 255, 255, 0.3); }
 
 .lgbutton {
   height: 60px;
   width: 200px;
-  border: 2px solid #545F66;
-  color: #545F66;
+  border: 3px solid #99DDC8;
+  color: #99DDC8;
   border-radius: 8px;
   text-align: center;
   padding-top: 0;
-  background-color: rgba(255, 255, 255, 0);
-  box-shadow: 3px 5px 7px 0px #585F54;
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: 3px 5px 7px 0px #545F66;
   margin-bottom: 5vh; }
 
 .totpts {
@@ -185,10 +200,10 @@ ul {
   width: auto; }
 
 .clue-des {
-  margin-top: 30px;
+  margin-top: 50px;
   padding: 20px;
   text-align: center;
-  color: #fbfff6; }
+  color: #545F66; }
 
 .home-logo {
   height: 8vh;
@@ -199,9 +214,6 @@ ul {
   height: 50%;
   width: 100%;
   text-align: center; }
-  .top-usrs-tbl h2 {
-    font-size: 2em;
-    font-weight: bold; }
 
 .splashPage {
   margin: 0;
@@ -240,6 +252,41 @@ ul {
 
 .leader {
   width: 100%;
-  height: 25px; }
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0;
+  color: #f7fff6;
+  box-shadow: 0px 2px 1px 2px rgba(153, 221, 200, 0.4); }
+
+.place {
+  align-items: flex-start;
+  width: 10%;
+  font-size: 1.5em;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2); }
+
+.lead-name {
+  align-items: center;
+  justify-content: flex-start;
+  width: 70%;
+  font-size: 1.5em;
+  background-color: rgba(84, 95, 102, 0.2); }
+
+.points {
+  align-items: flex-end;
+  padding-right: 5px;
+  width: 15%;
+  font-size: 1em;
+  background-color: rgba(255, 255, 255, 0.2); }
+
+.topuserstext {
+  font-weight: bolder;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 8px 0 0 0;
+  color: #f7fff6;
+  box-shadow: 1px 2px 1px 0px rgba(153, 221, 200, 0.4);
+  padding-right: 5px; }
 
 /*# sourceMappingURL=App.css.map */
